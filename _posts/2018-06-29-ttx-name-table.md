@@ -1,5 +1,4 @@
 ---
-layout: default
 title: ttx 和 SFNT 字体 'name' 表
 source: https://zhuanlan.zhihu.com/p/38679788
 ---

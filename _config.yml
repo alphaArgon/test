@@ -1,9 +1,14 @@
-title:        "://argon.red"
-url:          "https://argon.red"
-baseurl:      ""
-permalink:    "/:slug"
+{
+    "title":        "://argon.red",
+    "url":          "https://argon.red",
+    "baseurl":      "",
+    "permalink":    "/:slug",
 
-lang:         "zh"
-date_format:  "%Y/%m/%d"
+    "lang":         "zh",
+    "date_format":  "%Y/%m/%d",
 
-# theme:        "red"
+    "defaults": [{
+        "scope": {"path": ""},
+        "values": {"layout": "default"}
+    }]
+}

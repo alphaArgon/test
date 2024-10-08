@@ -1,5 +1,4 @@
 ---
-layout: default
 title: 关于仿色的杂谈
 cover: images/dithering-cover.png
 source: https://www.bilibili.com/read/cv14935113
@@ -20,7 +19,7 @@ source: https://www.bilibili.com/read/cv14935113
 
 {%- include figure.html
     caption="图 2　低亮度背景上的物体阴影，作防色处理<br>图右侧经提亮"
-    img="images/dithering-shadow-dithered.png"
+    img="images/dithering-shadow-dithering.png"
     width=288 -%}
 
 「防色」这一次较常见出现于 Photoshop 渐变工具的选项里。但我没有装 Photoshop，图 3 下半部分是 Safari 画出来的。 
