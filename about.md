@@ -1,8 +1,6 @@
 ---
-layout: page
+layout: default
 title: About
 ---
 
-This is an example page!
-
-It's very similar to a `post` layout, with the only difference that the publish date is not shown!
+There’s about nothing currently... Maybe this about page can be merged with the home page directly. 

@@ -1,15 +1,9 @@
-title:      "test"
-url:        "https://argon.red"
-baseurl:    "/test"
+title:        "://argon.red/test"
+url:          "https://argon.red"
+baseurl:      "/test"
+permalink:    "/:slug"
 
-permalink:  "/:slug"
+lang:         "zh"
+date_format:  "%Y/%m/%d"
 
-favicon:    "logo.png"
-
-theme:      "test"
-
-theme_config:
-  date_format:  "%Y/%m/%d"
-
-sass:
-  style:        ":compressed"
+# theme:        "red"
