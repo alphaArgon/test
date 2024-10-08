@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 所有文章
 ---
 
