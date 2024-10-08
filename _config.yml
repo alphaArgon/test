@@ -11,12 +11,12 @@
     "defaults": [{
         "scope": {"path": ""},
         "values": {"layout": "default"}
-    }]
+    }],
 
     "markdown":     "GFM",
 
     "kramdown": {  #  In case you want to use kramdown
         #  That’s annoying for a typographer.
-        "smart_quotes": ["apos", "apos", "quot", "quot"],
+        "smart_quotes": ["apos", "apos", "quot", "quot"]
     }
 }
