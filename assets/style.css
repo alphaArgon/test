@@ -16,7 +16,7 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {:root {
     --text-color: #fff;
-    --background-color: #223;
+    --background-color: #202024;
     --on-dark-text-color: #fff;
     --dark-accent-background-color: #834;
     --border-color: #668;
@@ -85,7 +85,7 @@ body {
 .site-badge {
     display: inline-block;
     padding-bottom: 0.25em;
-    padding-right: 0.5em;
+    padding-right: 0.25em;
     border-bottom: solid 1px var(--border-color);
 }
 

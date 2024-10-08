@@ -1,6 +1,6 @@
-title:        "://argon.red/test"
+title:        "://argon.red"
 url:          "https://argon.red"
-baseurl:      "/test"
+baseurl:      ""
 permalink:    "/:slug"
 
 lang:         "zh"

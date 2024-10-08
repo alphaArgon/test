@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 关于仿色的杂谈
 cover: images/dithering-cover.png
 source: https://www.bilibili.com/read/cv14935113

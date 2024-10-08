@@ -22,21 +22,21 @@
             <li><a href="https://twitter.com/alpha_argon"><i class="icon-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
         </ul>
     </nav>
-    <main class="content-container" lang="{{ page.lang | default: site.lang }}">
+    <main class="main" lang="{{ page.lang | default: site.lang }}">
 {%- unless page.suppress_header -%}
-        <header role="banner" class="site-badge">
-            <span>://argon.red</span>
+        <header>
+            <span class="site-badge">://argon.red</span>
     {%- if page.cover -%}
-            <img src="{{ page.cover | relative_url }}" class="header-banner-image">
+            <img class="header-banner-image" src="{{ page.cover | relative_url }}">
     {%- endif -%}
         </header>
 {%- endunless -%}
 {%- if page.title -%}
-        <h1 class="content-title">
+        <h1 class="main-title">
             {{ page.title }}
         </h1>
 {%- endif -%}
-        <article class="content">
+        <article class="main-content">
             {{ content }}
         </article>
 {%- if page.date or page.source -%}
