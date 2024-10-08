@@ -23,44 +23,48 @@
         </ul>
     </nav>
     <main class="main" lang="{{ page.lang | default: site.lang }}">
-{%- unless page.suppress_header -%}
-        <header>
+{%- unless page.suppress_banner -%}
+        <aside class="main-widget">
             <span class="site-badge">://argon.red</span>
     {%- if page.cover -%}
-            <img class="header-banner-image" src="{{ page.cover | relative_url }}">
+            <img class="top-banner-image" src="{{ page.cover | relative_url }}">
     {%- endif -%}
-        </header>
+        </aside>
 {%- endunless -%}
-{%- if page.title -%}
-        <h1 class="main-title">
-            {{ page.title }}
-        </h1>
-{%- endif -%}
         <article class="main-content">
-            {{ content }}
-        </article>
-{%- if page.date or page.source -%}
-        <footer class="post-meta">
-    {%- if page.date -%}
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
+{%- if page.title page.date or page.source -%}
+            <header class="post-header">
+    {%- if page.title -%}
+                <h1 class="post-title">{{ page.title }}</h1>
     {%- endif -%}
-    {%- if page.source -%}
-        {%- if page.source contains "github.com" -%}
-            <span>首发于 <a href="{{ page.source }}">GitHub</a></span>
-        {%- elsif page.source contains "zhihu.com" -%}
-            <span>首发于<a href="{{ page.source }}">知乎</a></span>
-        {%- elsif page.source contains "bilibili.com" -%}
-            <span>首发于<a href="{{ page.source }}">哔哩哔哩</a></span>
-        {%- elsif page.source contains "weibo.com" -%}
-            <span>首发于<a href="{{ page.source }}">微博</a></span>
-        {%- elsif page.source contains "weixin.qq.com" -%}
-            <span>首发于<a href="{{ page.source }}">微信公众号</a></span>
-        {%- else -%}
-            <span>首发于 <a href="{{ page.source }}">{{ page.source }}</a></span>
+    {%- if page.date or page.source -%}
+                <div class="post-meta">
+        {%- if page.date -%}
+                    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
         {%- endif -%}
+        {%- if page.source -%}
+            {%- if page.source contains "github.com" -%}
+                    <span>首发于 <a href="{{ page.source }}">GitHub</a></span>
+            {%- elsif page.source contains "zhihu.com" -%}
+                    <span>首发于<a href="{{ page.source }}">知乎</a></span>
+            {%- elsif page.source contains "bilibili.com" -%}
+                    <span>首发于<a href="{{ page.source }}">哔哩哔哩</a></span>
+            {%- elsif page.source contains "weibo.com" -%}
+                    <span>首发于<a href="{{ page.source }}">微博</a></span>
+            {%- elsif page.source contains "weixin.qq.com" -%}
+                    <span>首发于<a href="{{ page.source }}">微信公众号</a></span>
+            {%- else -%}
+                    <span>首发于 <a href="{{ page.source }}">{{ page.source }}</a></span>
+            {%- endif -%}
+        {%- endif -%}
+                </div>
     {%- endif -%}
-        </footer>
+            </header>
 {%- endif -%}
+            <div class="post-body">
+                {{ content }}
+            </div>
+        </article>
     </main>
 </body>
 </html>

@@ -1,8 +1,8 @@
 {
     "title":        "://argon.red",
     "url":          "https://argon.red",
-    "baseurl":      "",
-    "permalink":    "/:slug",
+    "baseurl":      "/test",
+    "permalink":    "/posts/:slug",
 
     "lang":         "zh",
     "timezone":     "Asia/Shanghai",
@@ -12,4 +12,11 @@
         "scope": {"path": ""},
         "values": {"layout": "default"}
     }]
+
+    "markdown":     "GFM",
+
+    "kramdown": {  #  In case you want to use kramdown
+        #  That’s annoying for a typographer.
+        "smart_quotes": ["apos", "apos", "quot", "quot"],
+    }
 }

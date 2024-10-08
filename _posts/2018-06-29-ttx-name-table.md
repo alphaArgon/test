@@ -1,6 +1,7 @@
 ---
 title: ttx 和 SFNT 字体 'name' 表
 source: https://zhuanlan.zhihu.com/p/38679788
+excerpt: 使用 ttx 提取字体文件的 'name' 表，并简介其内容。简单讨论 macOS 和 Windows 下 'name' 表惯例的区别。
 ---
 
 > 2024/10/08 注：原文不严谨之处并没有修改。如果你对这篇文章有任何疑问，欢迎提出。
