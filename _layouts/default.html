@@ -42,7 +42,7 @@
 {%- if page.date or page.source -%}
         <footer class="post-meta">
     {%- if page.date -%}
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: {{ site.date_format }} }}</time>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
     {%- endif -%}
     {%- if page.source -%}
         {%- if page.source contains "github.com" -%}
