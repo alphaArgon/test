@@ -8,6 +8,13 @@ layout: default
   {%-endif-%}
 </header>
 
-<!-- {%-include menu_item.html collection=site.data.menu.entries-%} -->
+<ul>
+{- for post in posts -}
+  <li>
+    <span>{{ post.date | date: site.theme_config.date_format }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
+  </li>
+{- endfor -}
+</ul>
 
 {{ content }}
