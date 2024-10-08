@@ -52,10 +52,35 @@ Mauris viverra dictum ultricies. Vestibulum quis ipsum euismod, facilisis metus 
 
 Now some code:
 
-```
+```js
 const ultimateTruth = 'this theme is the best!';
 console.log(ultimateTruth);
 ```
+
+```swift
+#if canImport (UIKit)
+
+/// A demo class declaration.
+class DemoButton: UIButton {
+    var touchCount = 0x0
+    var title: String
+
+    init(title: String = "Done") {
+        self.title = title
+    }
+}
+
+#endif
+```
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+```
+
 
 And here is some `inline code`!
 
