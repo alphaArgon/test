@@ -13,10 +13,8 @@
         "values": {"layout": "default"}
     }],
 
-    "markdown":     "GFM",
-
-    "kramdown": {  #  In case you want to use kramdown
-        #  That’s annoying for a typographer.
+    "kramdown": {
+        #  This is annoying for a typographer.
         "smart_quotes": ["apos", "apos", "quot", "quot"]
     }
 }
