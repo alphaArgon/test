@@ -9,10 +9,11 @@ layout: default
 </header>
 
 <ul>
-{%- for post in posts -%}
+{%- for post in site.posts -%}
   <li>
     <span>{{ post.date | date: site.theme_config.date_format }}</span>
     <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
+    <p>{{ post.excerpt }}</p>
   </li>
 {%- endfor -%}
 </ul>
