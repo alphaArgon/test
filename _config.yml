@@ -5,6 +5,7 @@
     "permalink":    "/:slug",
 
     "lang":         "zh",
+    "timezone":     "Asia/Shanghai",
     "date_format":  "%Y/%m/%d",
 
     "defaults": [{
