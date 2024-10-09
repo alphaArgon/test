@@ -13,6 +13,8 @@
         "values":   { "layout": "default" }
     }],
 
+    "include":      [ "_pages" ],
+
     "kramdown": {
         #  This is annoying for a typographer.
         "smart_quotes": [ "apos", "apos", "quot", "quot" ]
