@@ -13,10 +13,17 @@
         "values":   { "layout": "default" }
     }],
 
+    "sass": {
+        "style":    "compressed",
+    }
+
     "include":      [ "_pages" ],
+    "exclude":      [ "Gemfile", "CNAME", "LICENSE", "README.md" ],
+
+    "markdown":     "GFM",
 
     "kramdown": {
-        #  This is annoying for a typographer.
-        "smart_quotes": [ "apos", "apos", "quot", "quot" ]
+        "smart_quotes": [ "apos", "apos", "quot", "quot" ]  #  This is annoying for a typographer.
+
     }
 }
