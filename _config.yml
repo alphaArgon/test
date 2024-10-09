@@ -14,8 +14,8 @@
     }],
 
     "sass": {
-        "style":    "compressed",
-    }
+        "style":    "compressed"
+    },
 
     "include":      [ "_pages" ],
     "exclude":      [ "Gemfile", "CNAME", "LICENSE", "README.md" ],
@@ -24,6 +24,5 @@
 
     "kramdown": {
         "smart_quotes": [ "apos", "apos", "quot", "quot" ]  #  This is annoying for a typographer.
-
     }
 }
