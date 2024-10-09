@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}"/>
     <title>
@@ -18,17 +19,14 @@
     </nav>
     <nav class="link-nav" lang="en">
         <ul class="link-nav-list">
-            <li><a href="https://github.com/alphaArgon"><i class="icon-github"></i><span class="visually-hidden">GitHub</span></a></li>
-            <li><a href="https://twitter.com/alpha_argon"><i class="icon-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
+            <li><a href="https://github.com/alphaArgon" _target="blank"><i class="icon-github"></i><span class="visually-hidden">GitHub</span></a></li>
+            <li><a href="https://twitter.com/alpha_argon" _target="blank"><i class="icon-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
         </ul>
     </nav>
     <main class="main" lang="{{ page.lang | default: site.lang }}">
 {%- unless page.suppress_banner -%}
         <aside class="main-widget">
             <span class="site-badge">://argon.red</span>
-    {%- if page.cover -%}
-            <img class="top-banner-image" src="{{ page.cover | relative_url }}">
-    {%- endif -%}
         </aside>
 {%- endunless -%}
         <article class="main-content">
@@ -44,20 +42,23 @@
         {%- endif -%}
         {%- if page.source -%}
             {%- if page.source contains "github.com" -%}
-                    <span>首发于 <a href="{{ page.source }}">GitHub</a></span>
+                    <span>发布于 <a href="{{ page.source }}">GitHub</a></span>
             {%- elsif page.source contains "zhihu.com" -%}
-                    <span>首发于<a href="{{ page.source }}">知乎</a></span>
+                    <span>发布于<a href="{{ page.source }}">知乎</a></span>
             {%- elsif page.source contains "bilibili.com" -%}
-                    <span>首发于<a href="{{ page.source }}">哔哩哔哩</a></span>
+                    <span>发布于<a href="{{ page.source }}">哔哩哔哩</a></span>
             {%- elsif page.source contains "weibo.com" -%}
-                    <span>首发于<a href="{{ page.source }}">微博</a></span>
+                    <span>发布于<a href="{{ page.source }}">微博</a></span>
             {%- elsif page.source contains "weixin.qq.com" -%}
-                    <span>首发于<a href="{{ page.source }}">微信公众号</a></span>
+                    <span>发布于<a href="{{ page.source }}">微信公众号</a></span>
             {%- else -%}
-                    <span>首发于 <a href="{{ page.source }}">{{ page.source }}</a></span>
+                    <span>发布于 <a href="{{ page.source }}">{{ page.source }}</a></span>
             {%- endif -%}
         {%- endif -%}
                 </div>
+    {%- endif -%}
+    {%- if page.cover -%}
+            <img class="post-banner-image" src="{{ page.cover | relative_url }}">
     {%- endif -%}
             </header>
 {%- endif -%}

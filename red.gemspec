@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = [""]
   spec.summary       = "Jekyll Red Theme"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_config\.yml)!i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_pages|_config\.yml)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 3.9.0"
 
