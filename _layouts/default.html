@@ -24,19 +24,18 @@
         </ul>
     </nav>
     <main class="main" lang="{{ page.lang | default: site.lang }}">
-{%- unless page.suppress_banner -%}
-        <aside class="main-widget">
-            <span class="site-badge">://argon.red</span>
-        </aside>
-{%- endunless -%}
-        <article class="main-content">
+{%- if page.cover -%}
+        <img class="page-banner-image" src="{{ page.cover | relative_url }}">
+{%- endif -%}
+        <aside class="site-badge">://argon.red</aside>
+        <article class="page-content">
 {%- if page.title or page.date or page.source -%}
-            <header class="post-header">
+            <header class="page-header">
     {%- if page.title -%}
-                <h1 class="post-title">{{ page.title }}</h1>
+                <h1 class="page-title">{{ page.title }}</h1>
     {%- endif -%}
     {%- if page.date or page.source -%}
-                <div class="post-meta">
+                <div class="page-meta">
         {%- if page.date -%}
                     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
         {%- endif -%}
@@ -57,12 +56,9 @@
         {%- endif -%}
                 </div>
     {%- endif -%}
-    {%- if page.cover -%}
-            <img class="post-banner-image" src="{{ page.cover | relative_url }}">
-    {%- endif -%}
             </header>
 {%- endif -%}
-            <div class="post-body">
+            <div class="page-body">
                 {{ content }}
             </div>
         </article>

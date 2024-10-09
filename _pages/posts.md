@@ -7,9 +7,11 @@ title: Posts
 {%- for post in site.posts -%}
     <li class="post-list-item">
         <a href="{{ post.url | relative_url }}">
-            <figure class="post-entry">
     {%- if post.cover -%}
+            <figure class="post-entry has-image">
                 <img class="post-entry-image" src="{{ post.cover | relative_url }}">
+    {%- else -%}
+            <figure class="post-entry">
     {%- endif -%}
                 <figcaption class="post-entry-title">{{ post.title }}</figcaption>
                 <small class="post-entry-excerpt">{{ post.excerpt }}</small>
