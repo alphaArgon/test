@@ -13,11 +13,9 @@
     {%- when "/", "/index", "/index.html" -%}
         <span class="site-badge" role="complementary">{{ site.title }}</span>
     {%- else -%}
-        {%- if (page.url | slice: -1) == "/" -%}
-        <a href=".." class="site-badge" role="complementary">{{ site.title }}</a>
-        {%- else -%}
-        <a href="." class="site-badge" role="complementary">{{ site.title }}</a>
-        {%- endif -%}
+        {%- assign components = page.url | split: '/' -%}
+        {%- assign updir = components | slice: 0, (components | size | minus: 1) | join: '/' -%}
+        <a class="site-badge" href="{{ updir | relative_url }}" role="complementary">{{ site.title }}</a>
     {%- endcase -%}
 {%- endcapture -%}
 <body ontouchstart>
