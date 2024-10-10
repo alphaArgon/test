@@ -22,7 +22,7 @@
 
     "markdown":     "GFM",
 
-    "kramdown": {
+    "kramdown": {  #  In case of using Kramdown.
         "smart_quotes": [ "apos", "apos", "quot", "quot" ]  #  This is annoying for a typographer.
     }
 }

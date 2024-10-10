@@ -1,0 +1,540 @@
+---
+---
+
+/* Light theme */
+:root {
+    --text-color: #2d2e35;
+    --dimmed-text-color: #505159;
+    --secondary-text-color: #707279;
+    --accent-text-color: #b35;
+    --link-text-color: #104ed8;
+    --background-color: #fff;
+    --secondary-background-color: #f2f2f4;
+    --on-dark-text-color: #fff;
+    --dark-accent-background-color: #834;
+    --border-color: #c9c9cd;
+    --sh-keyword-color: #bb3355;
+    --sh-key-type-color: #7726bb;
+    --sh-other-type-color: #0044bb;
+    --sh-member-color: #0077aa;
+    --sh-number-color: #cc7700;
+    --sh-string-color: #228800;
+    --sh-macro-color: #885500;
+    --sh-comment-color: #667788;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {:root {
+    --text-color: #fff;
+    --dimmed-text-color: #d6d7dA;
+    --secondary-text-color: #acadb3;
+    --accent-text-color: #f89;
+    --link-text-color: #00afff;
+    --background-color: #191a1f;
+    --secondary-background-color: #23242a;
+    --on-dark-text-color: #fff;
+    --dark-accent-background-color: #834;
+    --border-color: #505159;
+    --sh-keyword-color: #ff7788;
+    --sh-key-type-color: #eebbff;
+    --sh-other-type-color: #aaeeff;
+    --sh-member-color: #88ccff;
+    --sh-number-color: #eebb00;
+    --sh-string-color: #99bb00;
+    --sh-macro-color: #cc9944;
+    --sh-comment-color: #778899;
+}}
+
+:root {
+    --underline-color: currentColor;
+    font: 16px/1.75 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    word-break: break-word;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p, ul, ol, blockquote, figure, pre, table {
+    margin: 1.25em 0;
+    padding: 0;
+}
+
+li, ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+h1 {
+    font-size: 200%;
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: 150%;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 125%;
+    line-height: 1.6;
+}
+
+h4 {
+    font-size: 100%;
+}
+
+h5 {
+    font-size: 87.5%;
+}
+
+h6 {
+    font-size: 75%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.25em 0 0.25em;
+}
+
+ul, ol {
+    padding-left: 2em;
+}
+
+::marker {
+    color: var(--accent-text-color);
+}
+
+blockquote {
+    position: relative;
+    padding-left: 2em;
+    color: var(--dimmed-text-color);
+}
+
+blockquote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    bottom: 0.3em;
+    width: 0.25em;
+    background-color: var(--border-color);
+}
+
+pre, code {
+    /* Monospace font looks larger */
+    font-size: 87.5%;
+    line-height: 1.5714285714;
+}
+
+pre pre,
+pre code {
+    /* Monospace inside monospace */
+    font-size: 100%;  
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
+}
+
+pre {
+    padding: 0.8571428571em 1.1428571429em;
+    background-color: var(--secondary-background-color);
+    overflow: auto;
+}
+
+code {
+    padding: 0.2em 0.4em;
+    background-color: var(--secondary-background-color);
+}
+
+small, .small {
+    font-size: 81.25%;
+}
+
+figcaption, th, .caption, .page-meta, .post-entry-meta {
+    font-size: 81.25%;
+    color: var(--secondary-text-color);
+}
+
+hr {
+    border: none;
+    border-top: solid 1px var(--border-color);
+    margin: 2.5em auto;
+    width: 50%;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    min-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    padding: 0 1.25em 0.2857142857em;
+    text-align: inherit;
+}
+
+td {
+    padding: 0.25em 1em;
+    border-top: 1pt solid var(--border-color);
+    border-bottom: 1pt solid var(--border-color);
+}
+
+:any-link, u, .underline {
+    background-image: linear-gradient(var(--underline-color), var(--underline-color));
+    background-repeat: no-repeat;
+    background-size: calc(100% - 2px) 1px;
+    background-position: 1px 100%;
+    padding-bottom: 1px;
+    text-decoration: none;
+}
+
+a:any-link {
+    color: var(--link-text-color);
+}
+
+a:any-link:hover:active {
+    opacity: 0.5;
+}
+
+/*  Chrome  */
+
+html {
+    --sidebar-width: 25vw;  /*  Will be refined by JavaScript.  */
+    background: linear-gradient(to right, var(--dark-accent-background-color), var(--dark-accent-background-color) var(--sidebar-width), var(--background-color) 0);
+}
+
+.site-nav {
+    position: fixed;
+    left: 5rem;
+    bottom: 30%;
+    color: var(--on-dark-text-color);
+}
+
+.site-nav-list {
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav-list a {
+    color: inherit;
+    background: none;
+}
+
+.link-nav {
+    position: fixed;
+    left: 5rem;
+    top: calc(70% + 3rem);
+    color: var(--on-dark-text-color);
+}
+
+.link-nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link-nav-list > li {
+    display: inline-block;
+}
+
+.link-nav-list a {
+    color: inherit;
+    background: none;
+}
+
+.main {
+    padding: 2rem 3rem 4rem;
+    margin-left: max(calc(50% - 21rem), var(--sidebar-width));  /*  Will be refined by JavaScript.  */
+    max-width: 42rem;  /*  Will be refined by JavaScript.  */
+}
+
+/*  Page Content  */
+
+.site-badge {
+    display: inline-block;
+    padding-bottom: 0.25em;
+    padding-right: 0.5em;
+    border-bottom: solid 1px var(--border-color);
+    background: none;
+}
+
+.home-hello {
+    position: fixed;
+    bottom: 30%;
+    margin: 0;
+    line-height: 0.9;
+    font-size: 128px;
+    /* font-style: italic; */
+}
+
+.page-meta > :nth-child(n + 2)::before {
+    content: " · ";
+    font-feature-settings: 'case';
+}
+
+.page-banner-image {
+    display: block;
+    margin: -2rem 0 2rem;
+    width: 100%;
+    max-height: 16em;
+    object-fit: cover;
+}
+
+.page-header {
+    margin: 1rem 0;
+}
+
+.figure {  /* Not <figure> */
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.figure-content {
+    display: block;
+    margin: 0.25em 0;
+    max-width: 100%;
+}
+
+.figure-caption {  /* Not <figcaption> */
+    display: table;
+    max-width: 100%;
+    margin: 1em auto 0;
+}
+
+
+.post-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.post-list-item {
+    margin: 0;
+    padding: 1em 0;
+    border-top: solid 1px var(--border-color);
+}
+
+.post-list-item:last-child {
+    border-bottom: solid 1px var(--border-color);
+}
+
+.post-list-item > a {
+    display: block;
+    color: inherit;
+    background: none;
+    padding: 0;
+}
+
+.post-entry {
+    margin: 0;
+}
+
+.post-entry.has-image {
+    position: relative;
+    padding-right: 11em;
+}
+
+.post-entry-image {
+    position: absolute;
+    right: 0;
+    top: 0.25em;
+    width: 10em;
+    height: calc(100% - 0.5em);
+    object-fit: cover;
+}
+
+.post-entry-title {
+    font-size: 125%;
+    font-weight: bold;
+    line-height: 1.6;
+    color: inherit;
+}
+
+.post-entry-excerpt {
+    display: block;
+    margin: 0.5em 0;
+
+    p, ul, ol, blockquote, figure, pre, table {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+}
+
+/*  Compact Layout  */
+
+@media (max-width: 1024px) {
+    html {
+        background: var(--background-color);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .site-nav {
+        position: static;
+        background-color: var(--dark-accent-background-color);
+    }
+
+    .site-nav-list {
+        font-size: inherit;
+        text-align: right;
+    }
+
+    .site-nav-list > li {
+        margin-right: 1em;
+        display: inline-block;
+    }
+
+    .link-nav {
+        position: static;
+        order: 1;  /*  Move to the bottom  */
+        padding: 1rem 0;
+        color: inherit;
+    }
+
+    .link-nav-list {
+        text-align: center;
+    }
+
+    .home-hello {
+        font-size: calc(6.25vw + 64px);
+    }
+
+    .main {
+        /*  Using `margin: 0 auto` here may cause the page to scroll horizontally  */
+        /*  This is set for fallback; JavaScript will refine it.  */
+        margin-left: max(calc(50% - 23rem), 0px);
+        padding: 0 2rem 3rem;
+        flex-grow: 1;
+    }
+
+    .main .site-badge {
+        display: none;
+    }
+
+    .page-banner-image {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+
+/*  Syntax Highlighting  */
+
+.highlighter-rouge .esc /* Escape */,
+.highlighter-rouge .err /* Error */,
+.highlighter-rouge .x /* Other */ {
+    color: var(--text-color);  /*  Do nothing  */
+}
+
+.highlighter-rouge .o /* Operator */,
+.highlighter-rouge .ow /* Word */,
+.highlighter-rouge .p /* Punctuation */,
+.highlighter-rouge .pi /* Indicator */ {
+    color: var(--text-color);  /*  Do nothing  */
+}
+
+.highlighter-rouge .c /* Comment */,
+.highlighter-rouge .ch /* Hashbang */,
+.highlighter-rouge .cd /* Doc */,
+.highlighter-rouge .cm /* Multiline */,
+.highlighter-rouge .c1 /* Single */,
+.highlighter-rouge .cs /* Special */ {
+    color: var(--sh-comment-color);
+}
+
+.highlighter-rouge .cp /* Preproc */,
+.highlighter-rouge .cpf /* PreprocFile */ {
+    color: var(--sh-macro-color);
+}
+
+.highlighter-rouge .k /* Keyword */,
+.highlighter-rouge .kc /* Constant */,
+.highlighter-rouge .kd /* Declaration */,
+.highlighter-rouge .kn /* Namespace */,
+.highlighter-rouge .kp /* Pseudo */,
+.highlighter-rouge .kr /* Reserved */,
+.highlighter-rouge .kt /* Type */,
+.highlighter-rouge .kv /* Variable */ {
+    color: var(--sh-keyword-color);
+    font-weight: bold;
+}
+
+.highlighter-rouge .l /* Literal */,
+.highlighter-rouge .ld /* Date */,
+.highlighter-rouge .m /* Number */,
+.highlighter-rouge .mb /* Bin*/,
+.highlighter-rouge .mf /* Float*/,
+.highlighter-rouge .mh /* Hex*/,
+.highlighter-rouge .mi /* Integer*/,
+.highlighter-rouge .il /* Long*/,
+.highlighter-rouge .mo /* Oct*/,
+.highlighter-rouge .mx /* Other*/,
+.highlighter-rouge .sc /* Char */ {
+    color: var(--sh-number-color);
+}
+
+.highlighter-rouge .s /* String */,
+.highlighter-rouge .sa /* Affix */,
+.highlighter-rouge .sb /* Backtick */,
+.highlighter-rouge .dl /* Delimiter */,
+.highlighter-rouge .sd /* Doc */,
+.highlighter-rouge .s2 /* Double */,
+.highlighter-rouge .se /* Escape */,
+.highlighter-rouge .sh /* Heredoc */,
+.highlighter-rouge .si /* Interpol */,
+.highlighter-rouge .sx /* Other */,
+.highlighter-rouge .sr /* Regex */,
+.highlighter-rouge .s1 /* Single */,
+.highlighter-rouge .ss /* Symbol */ {
+    color: var(--sh-string-color);
+}
+
+.highlighter-rouge .n /* Name */,
+.highlighter-rouge .nv /* Variable */ {
+    color: var(--text-color);  /*  Do nothing  */
+}
+
+.highlighter-rouge .nb /* Builtin */,
+.highlighter-rouge .nt /* Tag (CSS) */ {
+    color: var(--sh-key-type-color);
+}
+
+.highlighter-rouge.language-swift .kt  {
+    /* Swift types are not keywords */
+    color: var(--sh-key-type-color);
+    font-weight: inherit;
+}
+
+.highlighter-rouge .nn /* Namespace */,
+.highlighter-rouge .nx /* Other */,
+.highlighter-rouge .nd /* Decorator */,
+.highlighter-rouge .nc /* Class (CSS) */ {
+    color: var(--sh-other-type-color);
+}
+
+.highlighter-rouge .na /* Attribute */,
+.highlighter-rouge .bp /* Pseudo */,
+.highlighter-rouge .no /* Constant */,
+.highlighter-rouge .ni /* Entity */,
+.highlighter-rouge .ne /* Exception */,
+.highlighter-rouge .nf /* Function */,
+.highlighter-rouge .fm /* Magic */,
+.highlighter-rouge .py /* Property */,
+.highlighter-rouge .vc /* Class */,
+.highlighter-rouge .vg /* Global */,
+.highlighter-rouge .vi /* Instance */,
+.highlighter-rouge .vm /* Magic */,
+.highlighter-rouge .nl /* Label */ {
+    color: var(--sh-member-color);
+}
