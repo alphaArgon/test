@@ -23,7 +23,7 @@
         let rootStyle = getComputedStyle(root);
         let mainStyle = getComputedStyle(main);
 
-        let compactWidth = 1024;
+        let compactWidth = 960;
         let viewportWidth = root.clientWidth;
 
         let fontSize = parseFloat(rootStyle.fontSize);  //  16
@@ -37,7 +37,7 @@
         let bannerWidth = 0;
 
         if (viewportWidth > compactWidth) {
-            let sidebarWidth = Math.max(320, Math.floor(viewportWidth * 0.25));
+            let sidebarWidth = Math.max(280, Math.floor(viewportWidth * 0.25));
             root.style.setProperty('--sidebar-width', sidebarWidth + 'px');
 
             mainWidth -= sidebarWidth;

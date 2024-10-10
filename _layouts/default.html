@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang | default: site.lang }}">
 <head>
     <meta charset="utf-8">
     <meta name="color-scheme" content="light dark">
@@ -8,25 +8,35 @@
     <script src="{{ '/assets/style.js' | relative_url }}"></script>
     <title>{{ page.title | default: site.title }}</title>
 </head>
-<body>
-    <nav class="site-nav" lang="en">
+{%- capture site_badge -%}
+    {%- case page.url -%}
+    {%- when "/", "/index", "/index.html" -%}
+        <span class="site-badge" role="complementary">{{ site.title }}</span>
+    {%- else -%}
+        <a href=".." class="site-badge" role="complementary">{{ site.title }}</a>
+    {%- endcase -%}
+{%- endcapture -%}
+{%- if site.description -%}
+<body ontouchstart>
+        <nav class="site-nav" lang="en">
+        {{ site_badge }}
         <ul class="site-nav-list">
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
             <li><a href="{{ '/about' | relative_url }}">About</a></li>
             <li><a href="{{ '/posts' | relative_url }}">Posts</a></li>
         </ul>
     </nav>
-    <nav class="link-nav" lang="en">
-        <ul class="link-nav-list">
-            <li><a href="https://github.com/alphaArgon" _target="blank"><i class="icon-github"></i><span class="visually-hidden">GitHub</span></a></li>
-            <li><a href="https://twitter.com/alpha_argon" _target="blank"><i class="icon-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
+    <nav class="widgets" lang="en">
+        <ul class="lib-nav-list">
+            <li><a href="https://github.com/alphaArgon" target="_blank"><i class="icon-github"></i><span class="visually-hidden">GitHub</span></a></li>
+            <li><a href="https://twitter.com/alpha_argon" target="_blank"><i class="icon-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
         </ul>
     </nav>
-    <main class="main" lang="{{ page.lang | default: site.lang }}">
+    <main class="main">
 {%- if page.cover -%}
         <img class="page-banner-image" src="{{ page.cover | relative_url }}" role="banner">
 {%- endif -%}
-        <a href="{{ '..' | relative_url }}" class="site-badge" role="complementary">{{ site.title }}</a>
+        {{ site_badge }}
         <article class="page-content">
 {%- if page.title or page.date or page.source -%}
             <header class="page-header">
@@ -61,6 +71,11 @@
                 {{ content }}
             </div>
         </article>
+{%- if page.copyright -%}
+        <div class="copyright caption">{{ page.copyright }}</div>
+{%- elsif page.date -%}
+        <div class="copyright caption">&copy; {{ page.date | date: "%Y" }}</div>
+{%- endif -%}
     </main>
 </body>
 </html>
