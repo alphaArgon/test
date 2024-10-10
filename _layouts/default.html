@@ -13,7 +13,11 @@
     {%- when "/", "/index", "/index.html" -%}
         <span class="site-badge" role="complementary">{{ site.title }}</span>
     {%- else -%}
+        {%- if (page.url | slice: -1) == "/" -%}
         <a href=".." class="site-badge" role="complementary">{{ site.title }}</a>
+        {%- else -%}
+        <a href="." class="site-badge" role="complementary">{{ site.title }}</a>
+        {%- endif -%}
     {%- endcase -%}
 {%- endcapture -%}
 <body ontouchstart>
@@ -25,8 +29,8 @@
             <li><a href="{{ '/posts' | relative_url }}">Posts</a></li>
         </ul>
     </nav>
-    <nav class="widgets" lang="en">
-        <ul class="lib-nav-list">
+    <nav class="link-nav" lang="en">
+        <ul class="link-nav-list">
             <li><a href="https://github.com/alphaArgon" target="_blank"><i class="icon-github"></i><span class="visually-hidden">GitHub</span></a></li>
             <li><a href="https://twitter.com/alpha_argon" target="_blank"><i class="icon-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
         </ul>
