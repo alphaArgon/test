@@ -14,8 +14,10 @@
         <span class="site-badge" role="complementary">{{ site.title }}</span>
     {%- else -%}
         {%- assign components = page.url | split: '/' -%}
-        {%- assign updir = components | slice: 0, (components | size | minus: 1) | join: '/' -%}
-        <a class="site-badge" href="{{ updir | relative_url }}" role="complementary">{{ site.title }}</a>
+        {%- assign sliceLength = components | size | minus: 1 -%}
+        {%- assign updir = components | slice: 0, sliceLength | join: '/' -%}
+        <a class="site-badge" href="{{ updir | relative_url }}" role="complementary" rel="up">{{ site.title }}</a>
+        <!-- {{ page.url }} -->
     {%- endcase -%}
 {%- endcapture -%}
 <body ontouchstart>
